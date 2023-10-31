@@ -2,27 +2,29 @@ import React, {useState, useEffect} from 'react';
 import Header from './Header';
 import Table from './Table';
 import FormSub from './FormSub';
-
+import Search from './Search';
 
 
 
 function App() {
-    const [transactions, setData] = useState([]);
+    
+    const [transactions, setTransactions] = useState([]);
+    
     useEffect(() => {
         fetch('http://localhost:3000/transactions') 
           .then((response) => response.json())
           .then((data) => {
-            setData(data);
-            console.log(data)
-          })
-          .catch((error) => console.error('Error fetching data:', error));
-      }, []);
-
+            setTransactions(data);
+        })
+    }, []);
+    
+    console.log(transactions)
     return (
         <div className='App'>
             <Header />
             <FormSub />
-            {/* <Table transactions={transactions.transactions}/> */}
+            <Search initialData={transactions} />
+            <Table />
         </div>
     );
 }
