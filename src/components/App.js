@@ -24,7 +24,7 @@ function App() {
             <Header />
             <FormSub />
             <Search initialData={transactions} />
-            <Table />
+            <Table transactions={transactions} />
         </div>
     );
 }

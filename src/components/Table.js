@@ -1,12 +1,11 @@
-import React, {useState, useEffect} from "react"
-import Search from "./Search";
+import React from "react"
 
-function Table() {
+function Table({transactions}) {
     // console.log(transactions[0])
 
     return (
     <div>
-        {/* <h3>Table of Transactions</h3>
+        <h3>Table of Transactions</h3>
         <table>
             <thead>
                 <tr>
@@ -18,19 +17,19 @@ function Table() {
                 </tr>
             </thead>
             <tbody>
-                    {data.map((dat, index) => {
+                    {transactions.map((transaction, index) => {
                         return (
                             <tr key={index}>
-                                <td>{dat.id}</td>
-                                <td>{dat.date}</td>
-                                <td>{dat.description}</td>
-                                <td>{dat.category}</td>
-                                <td>{dat.amount}</td>
+                                <td>{transaction.id}</td>
+                                <td>{transaction.date}</td>
+                                <td>{transaction.description}</td>
+                                <td>{transaction.category}</td>
+                                <td>{transaction.amount}</td>
                             </tr>
                         )
                     })}
             </tbody>
-        </table> */}
+        </table>
     </div>
     )
 }
