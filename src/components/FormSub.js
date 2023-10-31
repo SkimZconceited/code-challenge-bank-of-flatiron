@@ -23,27 +23,25 @@ function FormSub() {
     };
 
         return (
-            <div id="form-Sub">
-                <h2>New Transaction Submission</h2>
-      <form onSubmit={handleSub}>
-        <p>Enter description: <input placeholder="Description..." onSubmit={handleInput} /></p>
-        
-        <div id="div-category">
-        <p>Choose category:</p>
+    <form onSubmit={handleSub}>
+            <h2>New Transaction Submission</h2>
+    <p>Enter description: <input placeholder="Description..." onSubmit={handleInput} /></p>
+    
+    <div id="div-category">
+    <p>Choose category:</p>
 
-        <select id="dropdown-categories" name="categories" onSubmit={handleInput}>
-            <option value="income" >Income</option>
-            <option value="fashion">Fashion</option>
-            <option value="food">Food</option>
-            <option value="entertainment">Entertainment</option>
-        </select>
-        </div>
-
-        <p>Enter amount: <input type="number" placeholder="Amount(kes)..." onSubmit={handleInput} /></p>
-
-        <input type="submit" value="Submit Transaction" onClick={() => console.log('Submitted')} />
-      </form>
+    <select id="dropdown-categories" name="categories" onSubmit={handleInput}>
+        <option value="income" >Income</option>
+        <option value="fashion">Fashion</option>
+        <option value="food">Food</option>
+        <option value="entertainment">Entertainment</option>
+    </select>
     </div>
+
+    <p>Enter amount: <input type="number" placeholder="Amount(kes)..." onSubmit={handleInput} /></p>
+
+    <input type="submit" value="Submit Transaction" onClick={() => console.log('Submitted')} />
+    </form>
   );
 }
 
