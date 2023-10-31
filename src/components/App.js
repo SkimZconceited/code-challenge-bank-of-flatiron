@@ -11,14 +11,14 @@ function App() {
     const [transactions, setTransactions] = useState([]);
     
     useEffect(() => {
-        fetch('http://localhost:3000/transactions') 
+        fetch('http://localhost:3001/transactions') 
           .then((response) => response.json())
           .then((data) => {
             setTransactions(data);
         })
     }, []);
     
-    console.log(transactions)
+    // console.log(transactions)
     return (
         <div className='App'>
             <Header />

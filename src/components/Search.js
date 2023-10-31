@@ -6,14 +6,14 @@ function Search({initialData}) {
         // return setSearchTerm(event.target.value)
     }
 
-    console.log(initialData)
+    // console.log(initialData)
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState(initialData);
     // console.log(searchTerm)
 
     useEffect(() => {
         // const results = initialData.map((dat) => { });
-        console.log(searchTerm.toLowerCase())
+        // console.log(searchTerm.toLowerCase())
         initialData.map((dat) => {if(searchTerm === dat.description) { 
             return setSearchResults([dat.id, dat.date, dat.description, dat.category, dat.amount])
         }
@@ -21,7 +21,7 @@ function Search({initialData}) {
     })
     }, [searchTerm]);
 
-    console.log(searchResults)
+    // console.log(searchResults)
 
     return (
         <>

@@ -1,0 +1,43 @@
+@import url(https://db.onlinewebfonts.com/c/a269ddfe4a24d91d4575ef0b4cd8b355?family=Outcast+W00+II+Regular);
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Outcast W00 II Regular';
+}
+
+form {
+    display: block;
+    background-color: rgb(187, 242, 189);
+    box-shadow: 1px 1px 3px 2px #fce0fd;
+    margin: 40px auto;   
+    padding: 20px; 
+}
+
+form input select #div-category {
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+    padding: 8px;
+    font-family: 'Popins', sans-serif;
+    border: 1px solid #e2c8c8;
+}
+
+table {
+    border-collapse: collapse;
+    width: fit-content;
+    margin: auto;
+    border: 1px solid #e2c8c8;
+}
+thead {
+    background-color: #e2c8c8;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #e2c8c8;
+}   
