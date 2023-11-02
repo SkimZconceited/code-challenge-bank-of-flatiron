@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { format } from 'date-fns';
-import tr from 'date-fns/esm/locale/tr/index.js';
 
 function FormSub() {
 
@@ -13,7 +12,7 @@ function FormSub() {
 
     const handleDescription = (event) => {setDescription(event.target.value)}
     const handleCategory = (event) => {setCategory(event.target.value)}
-    const handleAmount = (event) => {setAmount(event.target.value)}
+    const handleAmount = (event) => {setAmount(parseInt(event.target.value))}
 
     function sendData(transaction) {
         fetch('http://localhost:3001/transactions', {
@@ -35,8 +34,8 @@ function FormSub() {
             category: category,
             amount: amount
         })
-        console.log('Yes I am happening')
-        console.log(transactionData);
+        // console.log('Yes I am happening')
+        // console.log(transactionData);
 
         sendData(transactionData);
 
@@ -54,10 +53,10 @@ function FormSub() {
         
         <p>Choose category:  <select onChange={handleCategory} >
             <option>Choose Category</option>
-            <option value="income" >Income</option>
-            <option value="fashion">Fashion</option>
-            <option value="food">Food</option>
-            <option value="entertainment">Entertainment</option>
+            <option value="Income" >Income</option>
+            <option value="Fashion">Fashion</option>
+            <option value="Food">Food</option>
+            <option value="Entertainment">Entertainment</option>
         </select>
         </p>
 

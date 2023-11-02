@@ -1,14 +1,10 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 
 function Search({initialData}) {
-    function handleSearch(event) {
-        event.preventDefault();
-        // return setSearchTerm(event.target.value)
-    }
-
     // console.log(initialData, 'initial data')
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
+    // const 
     // console.log(searchTerm)
 
     // useEffect(() => {
@@ -23,9 +19,20 @@ function Search({initialData}) {
 
     function handleSearch(event) {
         event.preventDefault()
-        initialData.map((result) => {
+        let arrayResult = []
+        initialData.forEach((result) => {
+
             if (searchTerm === result.description) {
-                setSearchResults(result)
+                const newResult = {
+                    id: result.id,
+                    date: result.date,
+                    description: result.description,
+                    category: result.category,
+                    amount: result.amount,
+                }
+                arrayResult.push(newResult)
+                setSearchResults(arrayResult)
+                
             }
         });
         console.log(searchResults, 'searchResult in')
@@ -40,13 +47,15 @@ function Search({initialData}) {
             return (
                 <>
                     <tbody>
-                        <tr>
+                        {searchResults.map((result, index) => (
+                            <tr key={index}>
                             <td>{result.id}</td>
                             <td>{result.date}</td>
                             <td>{result.description}</td>
                             <td>{result.category}</td>
                             <td>{result.amount}</td>
                         </tr>
+                        ))}
                     </tbody>
                 </>
                     )
