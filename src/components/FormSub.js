@@ -1,48 +1,76 @@
 import React, {useState, useEffect} from 'react';
 import { format } from 'date-fns';
+import tr from 'date-fns/esm/locale/tr/index.js';
 
 function FormSub() {
-    const handleSub = (e) => {
-        e.preventDefault()
-        // handleInput(e);
-        console.log('Form submitted');
-    };
-    
 
-    const [inDate, setInDate] = useState('');
-    const [inCat, setInCat] = useState('');
     const myDate = new Date();
     const formattedDate = format(myDate, 'yyyy-mm-dd');
+    // const [date, setDate] = useState(formattedDate)
+    const [description, setDescription] = useState('')
+    const [category, setCategory] = useState('')
+    const [amount, setAmount] = useState(0)
 
-    console.log(formattedDate);
+    const handleDescription = (event) => {setDescription(event.target.value)}
+    const handleCategory = (event) => {setCategory(event.target.value)}
+    const handleAmount = (event) => {setAmount(event.target.value)}
 
-    const handleInput = (e) => {
-        setInDate(Date.now())
-        setInCat(e.target.value)
-        console.log(inDate, inCat);
-    };
+    function sendData(transaction) {
+        fetch('http://localhost:3001/transactions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: transaction })
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+    }
 
-        return (
-    <form onSubmit={handleSub}>
-            <h2>New Transaction Submission</h2>
-    <p>Enter description: <input placeholder="Description..." onSubmit={handleInput} /></p>
-    
-    <div id="div-category">
-    <p>Choose category:</p>
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        // setDate(formattedDate);
 
-    <select id="dropdown-categories" name="categories" onSubmit={handleInput}>
-        <option value="income" >Income</option>
-        <option value="fashion">Fashion</option>
-        <option value="food">Food</option>
-        <option value="entertainment">Entertainment</option>
-    </select>
-    </div>
+        console.log(formattedDate)
 
-    <p>Enter amount: <input type="number" placeholder="Amount(kes)..." onSubmit={handleInput} /></p>
+        const transactionData = JSON.stringify({
+            date: formattedDate,
+            description: description,
+            category: category,
+            amount: amount
+        })
+        console.log('Yes I am happening')
+        console.log(transactionData);
 
-    <input type="submit" value="Submit Transaction" onClick={() => console.log('Submitted')} />
-    </form>
-  );
+        sendData(transactionData);
+
+        // setDate('yyyy-mm-dd');
+        setDescription('')
+        setCategory('')
+        setAmount(0)
+    }
+
+    return (
+        <form onSubmit={handleSubmit}>
+                <h2>New Transaction Submission</h2>
+        <p>Enter description: <input type='text' onChange={handleDescription} /></p>
+        
+        <div id="div-category">
+        <p>Choose category:</p>
+
+        <select id="dropdown-categories" onChange={handleCategory} >
+            <option>Choose Category</option>
+            <option value="income" >Income</option>
+            <option value="fashion">Fashion</option>
+            <option value="food">Food</option>
+            <option value="entertainment">Entertainment</option>
+        </select>
+        </div>
+
+        <p>Enter amount: <input type="number" onChange={handleAmount} /></p>
+
+        <button type='submit'>Submit</button>
+        </form>
+    )
 }
 
 export default FormSub;
