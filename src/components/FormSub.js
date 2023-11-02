@@ -48,21 +48,18 @@ function FormSub() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form id='form-submit' onSubmit={handleSubmit}>
                 <h2>New Transaction Submission</h2>
         <p>Enter description: <input type='text' onChange={handleDescription} /></p>
         
-        <div id="div-category">
-        <p>Choose category:</p>
-
-        <select id="dropdown-categories" onChange={handleCategory} >
+        <p>Choose category:  <select onChange={handleCategory} >
             <option>Choose Category</option>
             <option value="income" >Income</option>
             <option value="fashion">Fashion</option>
             <option value="food">Food</option>
             <option value="entertainment">Entertainment</option>
         </select>
-        </div>
+        </p>
 
         <p>Enter amount: <input type="number" onChange={handleAmount} /></p>
 

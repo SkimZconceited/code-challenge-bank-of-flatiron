@@ -1,4 +1,4 @@
-@import url(https://db.onlinewebfonts.com/c/a269ddfe4a24d91d4575ef0b4cd8b355?family=Outcast+W00+II+Regular);
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
 
 * {
     box-sizing: border-box;
@@ -7,8 +7,8 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Outcast W00 II Regular';;
-    background-color: #7FBEEB;
+    font-family: 'SF Pro Display', sans-serif;
+    background-color: #ead1d1;
 }
 
 .App {
@@ -20,16 +20,17 @@ body {
 
 form {
     /* display: block; */
-    background-color: #7FBEEB;
+    background-color: #f1b1b1;
     box-shadow: 1px 1px 3px 2px #133C55;
     border-radius: 20px;
-    margin: 40px auto;   
+    margin: 10px auto;   
     padding: 20px; 
 }
 
 h1 {
     width: fit-content;
-    background-color: #6BC5F2;
+    margin-bottom: 10px;
+    /* background-color: #6BC5F2; */
 }
 
 div {
@@ -45,13 +46,42 @@ div {
 } */
 
 form input select div {
-    /* display: flex;
-    flex-direction: column; */
     margin: 10px auto;
     padding: 8px;
     width: 100%;
     font-family: sans-serif;
     border: 1px solid #764248;
+}
+
+form > p {
+    font-style: italic;
+    font-size: small;
+    margin-left: 10px;
+}
+
+form#form-submit {
+    display: inline;
+}
+
+h2#search-h2 {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+#form-search {
+    display: flex;
+    align-items: center;
+    /* margin: 50px; */
+    padding: 15px;
+    margin-top: 0;
+}
+
+button, input {
+    border-radius: 20px;
+}
+
+#form-search > button {
+    margin-left: 20px;
 }
 
 table {
@@ -60,12 +90,20 @@ table {
     margin: auto;
     border: 1px solid #e2c8c8;
 }
+
+div > h3 {
+    margin-top: 50px;
+}
+
 thead {
-    background-color: #e2c8c8;
+    background-color: #f78787;
     border: 1px solid #cd3737;
 }
 th, td {
     padding: 8px;
     text-align: left;
-    border: 1px solid #e2c8c8;
-}   
+    border: 1px solid #f13737;
+}
+td {
+    background-color: #f1b1b1;
+}

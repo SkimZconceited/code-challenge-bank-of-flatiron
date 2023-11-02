@@ -52,6 +52,27 @@
       "category": "fashion",
       "amount": "2500",
       "id": 8
+    },
+    {
+      "date": "2023-08-02",
+      "description": "Mission Impossible, CinemaX",
+      "category": "entertainment",
+      "amount": "1000",
+      "id": 9
+    },
+    {
+      "date": "2023-08-02",
+      "description": "Sold old TV",
+      "category": "income",
+      "amount": "19000",
+      "id": 10
+    },
+    {
+      "date": "2023-15-02",
+      "description": "Netflix Monthly Payment",
+      "category": "entertainment",
+      "amount": "986",
+      "id": 11
     }
   ]
 }
