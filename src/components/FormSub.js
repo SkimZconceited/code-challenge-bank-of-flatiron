@@ -6,7 +6,7 @@ function FormSub() {
 
     const myDate = new Date();
     const formattedDate = format(myDate, 'yyyy-mm-dd');
-    // const [date, setDate] = useState(formattedDate)
+
     const [description, setDescription] = useState('')
     const [category, setCategory] = useState('')
     const [amount, setAmount] = useState(0)
@@ -28,9 +28,6 @@ function FormSub() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // setDate(formattedDate);
-
-        console.log(formattedDate)
 
         const transactionData = JSON.stringify({
             date: formattedDate,
@@ -43,10 +40,11 @@ function FormSub() {
 
         sendData(transactionData);
 
-        // setDate('yyyy-mm-dd');
         setDescription('')
         setCategory('')
         setAmount(0)
+
+        event.target.reset()
     }
 
     return (

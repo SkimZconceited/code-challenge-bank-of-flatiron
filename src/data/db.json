@@ -45,6 +45,13 @@
       "category": "food",
       "amount": "1200",
       "id": 7
+    },
+    {
+      "date": "2023-07-02",
+      "description": "Cotton Sweater, Mr. Price",
+      "category": "fashion",
+      "amount": "2500",
+      "id": 8
     }
   ]
 }
